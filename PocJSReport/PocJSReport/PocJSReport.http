@@ -1,0 +1,6 @@
+@PocJSReport_HostAddress = http://localhost:5022
+
+GET {{PocJSReport_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
