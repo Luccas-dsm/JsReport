@@ -1,7 +1,4 @@
-using jsreport.AspNetCore;
-using jsreport.Binary;
-using jsreport.Client;
-using jsreport.Local;
+using PocJSReport.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +10,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddMvc();
-builder.Services.AddJsReport(new ReportingService(builder.Configuration.GetSection("urlJsReport").Get<string>()));
+
+builder.Services.AddScoped<IReportService, ReportService>();
 
 
 var app = builder.Build();
